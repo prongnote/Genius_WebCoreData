@@ -1,0 +1,388 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/Content/fileinput.min.css" rel="stylesheet" />
+<link href="~/Content/fileinput-rtl.min.css" rel="stylesheet">
+<link href="~/Content/step-progressbar.css" rel="stylesheet">
+
+
+<script src="~/Scripts/Plugins/FileUpload/vendor/jquery.ui.widget.js"></script>
+<script src="~/Scripts/Plugins/FileUpload/jquery.iframe-transport.js"></script>
+<script src="~/Scripts/Plugins/FileUpload/jquery.fileupload.js"></script>
+
+<script>
+
+    //var jsonString = convertViewBagJsonData("@ViewBag.jsonDatas");
+    //var jsonDatas = eval('(' + jsonString + ')');
+    //console.log(jsonDatas);
+
+    $(function () {
+        // Change this to the location of your server-side upload handler:
+        //var url = window.location.hostname === 'blueimp.github.io' ?'//jquery-file-upload.appspot.com/' : 'server/php/';
+        setProgressBar("1");
+        var url = "V_SSO_SendDataFormUploadFile";
+        $('#fileupload').fileupload({
+            url: url,
+            dataType: 'json',
+            done: function (e, data) {
+                // console.log(data.result);
+                if (data.result.result != "FAILURE") {
+                    var str = data.result.textDecode;
+                    var res = str.replace(/\\r\\n/g, "<br />");
+                    //replace(/\n/g, "<br />");
+                    setProgressBar("2");
+                    $("#div_text_decode").html(res);
+                    $("#txt_xml_upload_file_name").val(data.result.textXmlFileName);
+                    alert(MESSAGE_SYSTEM_SUCCESS + " กรุณาดำเนินการขั้นตอนต่อไป (STEP 2)");
+                }
+                else {
+                    alert("!!!!! ERROR ระบบไม่สามารถอ่านข้อมูลไฟล์ได้ กรุณาตรวจสอบไฟล์ต้องเป็น .DATII เท่านั้น");
+                    $('#progress_1 .progress-bar').css('width', '0%');
+                }
+
+            }, progressall: function (e, data) {
+                var progress = parseInt(data.loaded / data.total * 100, 10);
+                $('#progress_1 .progress-bar').css('width', progress + '%');
+            }
+        }).prop('disabled', !$.support.fileInput)
+        .parent().addClass($.support.fileInput ? undefined : 'disabled');
+
+    });
+
+    function convertDataUploadXml() {
+        var progress = parseInt(1000 / 1 * 10, 10);
+        $('#progress_2 .progress-bar').css('width', progress + '%');
+        var datas = { server_path_decode: "~/Uploads/TestFileDecode", server_file_name: $("#txt_xml_upload_file_name").val() };
+        var url = "convertDataUploadXml";
+        jQuery.post(url, datas, function (results) {
+            console.log(results);
+            if (results.result == RESULT_SUCCESS) {
+                setProgressBar('3');
+                alert(MESSAGE_SYSTEM_SUCCESS);
+            } else {
+                alert(MESSAGE_SYSTEM_FAILURE);
+                $('#progress_3 .progress-bar').css('width', '0%');
+                return false;
+            }
+
+        });
+
+    }
+    function sendDataXmlToSSO() {
+
+        var progress = parseInt(1000000000 / 1 * 10, 10);
+        $('#progress_3 .progress-bar').css('width', progress + '%');
+
+        //var datas = { controller: "sendDataXmlToSSO" };
+        var datas = { controller: "transferDataXmlToSSO" };
+
+        var url = "transferDataXmlToSSO";
+        jQuery.post(url, datas, function (results) {
+            console.log(results);
+            if (results.result == RESULT_SUCCESS) {
+                setProgressBar('4');
+                //sendDataXmlToSSO();
+            } else {
+                alert(MESSAGE_SYSTEM_FAILURE);
+                $('#progress_4 .progress-bar').css('width', '0%');
+                return false;
+            }
+
+        });
+
+    }
+
+    function setProgressBar(progress_status) {
+        //var datas = { controller: "loadDataProgressStatus" };
+        //var results = submitRequestData("Controllers/cAdmin.php", datas);
+
+        for (var index = 0 ; index <= 4 ; index++) {
+            if (index <= progress_status) {
+                $("#listTap" + index).addClass('updated not-allowed').removeClass('pointer');
+            } else {
+                $("#listTap" + index).addClass('not-allowed').removeClass('pointer');
+            }
+        }
+        $("#listTap" + progress_status).addClass("active").addClass('pointer').removeClass("updated");
+        //getProgress(results.admin_status) ;
+        if (progress_status > 4) { alert("คุณได้ทำการอัพเดทข้อมูลเสร็จสิ้นแล้ว"); $("#row_finish_update").show(); }
+    }
+
+
+
+    function getProgress(progress) {
+
+        switch (progress) {
+            case 1: progress1(); break;
+            case 2: progress2(); break;
+            case 3: progress2(); break;
+            case 4: progress4(); break;
+        }
+
+    }
+
+    function setStatusProgress(progress) {
+        //getProgress(progress) ;'
+
+        if ($("#listTap" + progress).hasClass("active")) {
+            if (confirm("คุณต้องการที่จะบันทึกข้อมูลใช่หรือไม่ !!!!! ")) {
+                //  saveDataProgress(progress);
+            }
+        }
+        else {
+            alert("คุณไม่สามารถ ทำขั้นตอนนี้ได้ !!!");
+            return false;
+        }
+
+    }
+
+
+</script>
+
+
+
+<style>
+    .fileinput-button input {
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin: 0;
+        opacity: 0;
+        -ms-filter: 'alpha(opacity=0)';
+        font-size: 200px !important;
+        direction: ltr;
+        cursor: pointer;
+    }
+
+    input[type="file"] {
+        display: block;
+    }
+
+    .nav.nav-tabs > li:not(.active) > a {
+        background-color: #F5F5F5;
+        border: 0 none;
+    }
+    /*.contain-tabs-fix{*/
+    /*border: 1px solid #ddd;*/
+    /*border-radius: 5px;*/
+    /*margin-top: -12px;*/
+    /*}*/
+
+    .colunit div.row-detailx {
+        border: 1px solid #e1e1e8;
+        border-radius: 4px;
+        /*margin-bottom: 10px;*/
+        padding: 10px;
+        /*box-shadow: 0 5px 7px rgba(0, 0, 0, 0.17);*/
+        box-shadow: 0 2px 5px -2px rgba(0, 0, 0, 0.17);
+        margin: 0 auto 10px;
+        position: relative;
+        width: 60%;
+    }
+
+    .colunit .btn-act-unit {
+        position: absolute;
+        right: 5px;
+        top: 5px;
+    }
+
+    .tabbable {
+        margin-top: 2.5em;
+    }
+
+    .pointer {
+        /*cursor: pointer;*/
+    }
+
+    .show {
+        display: block !important;
+    }
+</style>
+
+
+
+<body>
+    <div class="jumbotron">
+        <div class="row">
+            <div class="col-md-8">
+                <h1>Genius Data Center</h1>
+                <br />
+                <h2>ส่งข้อมูลเข้าระบบประกันสังคม</h2>
+            </div>
+            <div class="col-md-4" style="text-align:center;">
+                <img src="~/Images/Logos/SPS.jpg" border="0" style="width:200px;" />
+            </div>
+        </div>
+        <!--
+            <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
+            <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+        -->
+    </div>
+
+    <!--
+    <div class="row">
+        <button type="button" class="btn btn-primary" onclick="setProgressBar('2'); ">TEST 2 </button>
+        <button type="button" class="btn btn-primary" onclick="setProgressBar('3'); ">TEST 3 </button>
+        <button type="button" class="btn btn-primary" onclick="setProgressBar('4'); ">TEST 4 </button>
+        <button type="button" class="btn btn-primary" onclick="setProgressBar('5'); ">TEST FINISH </button>
+    </div>
+    -->
+    <!-- ###################################### Step Progess ########################################-->
+
+    <div class="row">
+        <div class="col-md-12">
+            <div id="status-progressbar" class="panel panel-warning">
+                <div class="panel-heading">
+                    <i class="glyphicon glyphicon-pencil"></i>
+                    ขั้นตอนการทำงาน
+                </div>
+                <div class="panel-body">
+                    <div class="sp-container">
+                        <ul class="step-progressbar">
+                            <li class="tab pointer" id="listTap1" data-number="1" onclick="setStatusProgress(1) ; ">อัพโหลดข้อมูลไฟล์ <br />(เงินสมทบ นามสกุล .DATII)</li>
+                            <li class="tab pointer" id="listTap2" data-number="2" onclick="setStatusProgress(2) ; ">ตรวจสอบข้อมูล และ ส่งข้อมูลเข้าระบบ สปส.</li>
+                            <li class="tab pointer" id="listTap3" data-number="3" onclick="setStatusProgress(3) ; ">อัพเดทสถานะ ข้อมูลสปส.</li>
+                            <li class="tab pointer" id="listTap4" data-number="4" onclick="setStatusProgress(4) ; ">สิ้นสุดการทำงาน</li>
+                        </ul>
+
+                    </div>
+                </div>
+                <div class="row" id="row_finish_update" style="display:none;">
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="small-box bg-yellow">
+                                    <div class="inner" style="text-align:center">
+                                        <h4> คุณได้ทำการอัพเดทข้อมูลเสร็จสิ้นแล้ว</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- ###################################### END Step Progess ########################################-->
+    <div class="row" style="text-align:right">
+        <div class="col-md-12">
+            ----------> XML UPLOAD FILE NAME :
+            <input type="text" name="txt_xml_upload_file_name" id="txt_xml_upload_file_name" value="" size="50" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <form>
+                <div class="form-group">
+
+                    <label for="upload_sso_file_encode">กรุณาอัพโหลดไฟล์</label>
+                    <input id="input-upload_sso_file_encode" name="upload_sso_file_encode" type="file" class="file">
+                    <!--<input type="file" class="form-control" id="upload_sso_file_encode" placeholder="กรุณาอัพโหลดไฟล์" onchange="testUploadFile();">
+                     <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
+                </div>
+                <!--
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Password</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                </div>
+                    -->
+
+                <span class="btn btn-success fileinput-button">
+                    <i class="glyphicon glyphicon-plus"></i>
+                    <span>Select files...</span>
+                    <!-- The file input field used as target for the file upload widget -->
+                    <input id="fileupload" type="file" name="files[]" multiple>
+                </span>
+                <br>
+                <br>
+                <!-- The container for the uploaded files -->
+                <div id="files" class="files"></div>
+
+            </form>
+
+        </div>
+        <!-- <div class="col-md-6" style="background-color:black;height:auto;color:white;font-size:10px;">-->
+        <div class="col-md-6">
+            <br>
+            <br><br>
+
+            @* @Html.Raw(ViewBag.jsonData) *@
+            <div id="div_text_decode" style="height:100px; overflow: scroll;display:none;"></div>
+            <!-- The global progress bar -->
+            <div id="progress_1" class="progress">
+                <div class="progress-bar progress-bar-success"></div>
+            </div>
+            <br><br>
+        </div>
+
+    </div>
+
+
+
+
+    <div class="row">
+        <div class="col-md-6">
+            <!-- The global progress bar -->
+            <button type="button" class="btn btn-primary" onclick="convertDataUploadXml(); ">ตรวจสอบข้อมูล และ ส่งข้อมูลเข้าระบบ สปส.</button>
+            <br />
+            <br />
+        </div>
+        <div class="col-md-6">
+            <div id="progress_2" class="progress">
+                <div class="progress-bar progress-bar-success"></div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="row">
+        <div class="col-md-6">
+            <!-- The global progress bar -->
+            <button type="button" class="btn btn-primary" onclick="sendDataXmlToSSO(); ">อัพเดทสถานะ ข้อมูลสปส.</button>
+            <br />
+            <br />
+
+        </div>
+        <div class="col-md-6">
+            <div id="progress_3" class="progress">
+                <div class="progress-bar progress-bar-success"></div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="row">
+        <div class="col-md-6">
+            <!-- The global progress bar -->
+            <button type="button" class="btn btn-primary" onclick="return false;">สรุปข้อมูล</button>
+            <br />
+            <br />
+
+        </div>
+        <div class="col-md-6">
+            <div id="progress_4" class="progress">
+                <div class="progress-bar progress-bar-success"></div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+

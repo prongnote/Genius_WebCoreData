@@ -1,0 +1,195 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<SSOMessageSubsidy xmlns="urn:th:sso:xsd:subsidy:1" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+  <DocumentHeader>
+    <ID>HDUS000000013</ID>
+    <IssueDateTime>2018-06-02T14:25:03</IssueDateTime>
+    <RegistrationID>TH0001055410115490000000001T6</RegistrationID>
+  </DocumentHeader>
+  <DocumentDetail>
+    <PartyInformation>
+      <TraderParty>
+        <TaxInformation>
+          <TaxNumber>0105541011549</TaxNumber>
+          <BranchCode>000000</BranchCode>
+          <BranchName>สำนักงานใหญ่</BranchName>
+        </TaxInformation>
+        <Name>
+          <Thai>RES</Thai>
+          <English>19/26 ม.ชวนชื่น โมดัส เซนโทร ถ.แจ้งวัฒนะ</English>
+        </Name>
+        <Address>
+          <StreetAndNumber>ต.คลองเกลือ อ.ปากเกร็ด จ.นนทบุรี</StreetAndNumber>
+          <District>คลองเกลือ</District>
+          <SubProvince />
+          <Province />
+          <Postcode>11120</Postcode>
+          <CountryCode>TH</CountryCode>
+        </Address>
+        <SSOAccountID>1002673054</SSOAccountID>
+        <ContractDetail>
+          <NamePrefix>*****</NamePrefix>
+          <Name>*****</Name>
+          <PhoneNumber>025753959</PhoneNumber>
+          <MobileNumber>*****</MobileNumber>
+          <FaxNumber>025753963</FaxNumber>
+          <EmailAddress>*****</EmailAddress>
+          <Other>*****</Other>
+        </ContractDetail>
+      </TraderParty>
+    </PartyInformation>
+    <EmployerInformation>
+      <EmployerID />
+      <EmployerName />
+      <EmployerPosition />
+    </EmployerInformation>
+    <SubsidyInformation>
+      <SubsidyRate>05.00</SubsidyRate>
+      <SubsidyMonth>--04--</SubsidyMonth>
+      <SubsidyYear>2561</SubsidyYear>
+      <TotalWageAmount currencyID="THB">403200.00</TotalWageAmount>
+      <TotalEmployeeSubsidyAmount currencyID="THB">7280</TotalEmployeeSubsidyAmount>
+      <TotalEmployerSubsidyAmount currencyID="THB">7280</TotalEmployerSubsidyAmount>
+      <TotalSubsidyAmount currencyID="THB">14560</TotalSubsidyAmount>
+      <TotalEmployeeNumber>10</TotalEmployeeNumber>
+      <BranchInformation>
+        <BranchItem>
+          <ItemNumber>1</ItemNumber>
+          <SSOBranchCode>000000</SSOBranchCode>
+          <TotalBranchWageAmount currencyID="THB">       403200.00</TotalBranchWageAmount>
+          <TotalBranchEmployeeSubsidyAmount currencyID="THB">    7280</TotalBranchEmployeeSubsidyAmount>
+          <TotalBranchEmployerSubsidyAmount currencyID="THB">    7280</TotalBranchEmployerSubsidyAmount>
+          <TotalBranchSubsidyAmount currencyID="THB">   14560</TotalBranchSubsidyAmount>
+          <TotalBranchEmployeeNumber>      10</TotalBranchEmployeeNumber>
+          <ItemInformation>
+            <SubsidyItem>
+              <ItemNumber>1</ItemNumber>
+              <EmployeeInformation>
+                <EmployeeID>1100400462131</EmployeeID>
+                <EmployeeTitle>นางสาว</EmployeeTitle>
+                <EmployeeName>ณิชาภา</EmployeeName>
+                <EmployeeLastName>จงประกายทอง</EmployeeLastName>
+              </EmployeeInformation>
+              <WageAmount currencyID="THB">32000.00</WageAmount>
+              <SubsidyAmount currencyID="THB">750</SubsidyAmount>
+              <LastEntry>N</LastEntry>
+            </SubsidyItem>
+            <SubsidyItem>
+              <ItemNumber>2</ItemNumber>
+              <EmployeeInformation>
+                <EmployeeID>1100800623174</EmployeeID>
+                <EmployeeTitle>นางสาว</EmployeeTitle>
+                <EmployeeName>จุฑามาศ</EmployeeName>
+                <EmployeeLastName>วาสนวัฒนา</EmployeeLastName>
+              </EmployeeInformation>
+              <WageAmount currencyID="THB">25000.00</WageAmount>
+              <SubsidyAmount currencyID="THB">750</SubsidyAmount>
+              <LastEntry>N</LastEntry>
+            </SubsidyItem>
+            <SubsidyItem>
+              <ItemNumber>3</ItemNumber>
+              <EmployeeInformation>
+                <EmployeeID>1101800095276</EmployeeID>
+                <EmployeeTitle>นางสาว</EmployeeTitle>
+                <EmployeeName>พิมพ์ผกา</EmployeeName>
+                <EmployeeLastName>จุลสมศักดิ์</EmployeeLastName>
+              </EmployeeInformation>
+              <WageAmount currencyID="THB">26000.00</WageAmount>
+              <SubsidyAmount currencyID="THB">750</SubsidyAmount>
+              <LastEntry>N</LastEntry>
+            </SubsidyItem>
+            <SubsidyItem>
+              <ItemNumber>4</ItemNumber>
+              <EmployeeInformation>
+                <EmployeeID>1160100229015</EmployeeID>
+                <EmployeeTitle>นางสาว</EmployeeTitle>
+                <EmployeeName>ภรณ์ฐิสา</EmployeeName>
+                <EmployeeLastName>ประยูรสิน</EmployeeLastName>
+              </EmployeeInformation>
+              <WageAmount currencyID="THB">20000.00</WageAmount>
+              <SubsidyAmount currencyID="THB">750</SubsidyAmount>
+              <LastEntry>N</LastEntry>
+            </SubsidyItem>
+            <SubsidyItem>
+              <ItemNumber>5</ItemNumber>
+              <EmployeeInformation>
+                <EmployeeID>1349900070998</EmployeeID>
+                <EmployeeTitle>นางสาว</EmployeeTitle>
+                <EmployeeName>สิริจันทรา</EmployeeName>
+                <EmployeeLastName>สานนท์</EmployeeLastName>
+              </EmployeeInformation>
+              <WageAmount currencyID="THB">25000.00</WageAmount>
+              <SubsidyAmount currencyID="THB">750</SubsidyAmount>
+              <LastEntry>N</LastEntry>
+            </SubsidyItem>
+            <SubsidyItem>
+              <ItemNumber>6</ItemNumber>
+              <EmployeeInformation>
+                <EmployeeID>1469900289085</EmployeeID>
+                <EmployeeTitle>นางสาว</EmployeeTitle>
+                <EmployeeName>สายสุดา</EmployeeName>
+                <EmployeeLastName>นนทะสี</EmployeeLastName>
+              </EmployeeInformation>
+              <WageAmount currencyID="THB">10600.00</WageAmount>
+              <SubsidyAmount currencyID="THB">530</SubsidyAmount>
+              <LastEntry>N</LastEntry>
+            </SubsidyItem>
+            <SubsidyItem>
+              <ItemNumber>7</ItemNumber>
+              <EmployeeInformation>
+                <EmployeeID>1609900059843</EmployeeID>
+                <EmployeeTitle>นาย</EmployeeTitle>
+                <EmployeeName>พลัฏฐ์</EmployeeName>
+                <EmployeeLastName>ชัยภากุล</EmployeeLastName>
+              </EmployeeInformation>
+              <WageAmount currencyID="THB">70000.00</WageAmount>
+              <SubsidyAmount currencyID="THB">750</SubsidyAmount>
+              <LastEntry>N</LastEntry>
+            </SubsidyItem>
+            <SubsidyItem>
+              <ItemNumber>8</ItemNumber>
+              <EmployeeInformation>
+                <EmployeeID>3101403259538</EmployeeID>
+                <EmployeeTitle>นางสาว</EmployeeTitle>
+                <EmployeeName>กัลยา</EmployeeName>
+                <EmployeeLastName>หาญวิวัฒนกุล</EmployeeLastName>
+              </EmployeeInformation>
+              <WageAmount currencyID="THB">150000.00</WageAmount>
+              <SubsidyAmount currencyID="THB">750</SubsidyAmount>
+              <LastEntry>N</LastEntry>
+            </SubsidyItem>
+            <SubsidyItem>
+              <ItemNumber>9</ItemNumber>
+              <EmployeeInformation>
+                <EmployeeID>3450900247119</EmployeeID>
+                <EmployeeTitle>นางสาว</EmployeeTitle>
+                <EmployeeName>วนิดา</EmployeeName>
+                <EmployeeLastName>อรัญแล</EmployeeLastName>
+              </EmployeeInformation>
+              <WageAmount currencyID="THB">23000.00</WageAmount>
+              <SubsidyAmount currencyID="THB">750</SubsidyAmount>
+              <LastEntry>N</LastEntry>
+            </SubsidyItem>
+            <SubsidyItem>
+              <ItemNumber>10</ItemNumber>
+              <EmployeeInformation>
+                <EmployeeID>3801400339771</EmployeeID>
+                <EmployeeTitle>นางสาว</EmployeeTitle>
+                <EmployeeName>หทัยกาญจน์</EmployeeName>
+                <EmployeeLastName>แพรกเมือง</EmployeeLastName>
+              </EmployeeInformation>
+              <WageAmount currencyID="THB">21600.00</WageAmount>
+              <SubsidyAmount currencyID="THB">750</SubsidyAmount>
+              <LastEntry>N</LastEntry>
+            </SubsidyItem>
+          </ItemInformation>
+        </BranchItem>
+      </BranchInformation>
+    </SubsidyInformation>
+    <PaymentInformation>
+      <BankCode>011</BankCode>
+      <BankBranchCode>000029</BankBranchCode>
+      <AccountNumber>0291052967</AccountNumber>
+      <PaymentAmount currencyID="THB">14560</PaymentAmount>
+    </PaymentInformation>
+  </DocumentDetail>
+</SSOMessageSubsidy>

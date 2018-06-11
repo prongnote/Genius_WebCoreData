@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<SSOMessageSubsidy xmlns="urn:th:sso:xsd:subsidy:1" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+  <DocumentHeader>
+    <ID>HDUS000000010</ID>
+    <IssueDateTime>2018-03-30T16:26:28</IssueDateTime>
+    <RegistrationID>TH0001055410115490000000001T6</RegistrationID>
+  </DocumentHeader>
+  <DocumentDetail>
+    <PartyInformation>
+      <TraderParty>
+        <TaxInformation>
+          <TaxNumber>0105541011549</TaxNumber>
+          <BranchCode>000000</BranchCode>
+          <BranchName>เมืองทองธานี</BranchName>
+        </TaxInformation>
+        <Name>
+          <Thai>บริษัท ไทยซอฟท์แวร์เอ็นเตอร์ไพรส์ จำกัด</Thai>
+          <English>ThaiSoftware Enterprise Co., Ltd.</English>
+        </Name>
+        <Address>
+          <StreetAndNumber>19/26 ม.ชวนชื่น โมดัส เซนโทร ซ.แจ้งวัฒนะ-ปากเกร็ด 41</StreetAndNumber>
+          <District>คลองเกลือ</District>
+          <SubProvince>ปากเกร็ด</SubProvince>
+          <Province>จ.นนทบุรี</Province>
+          <Postcode>11120</Postcode>
+          <CountryCode>TH</CountryCode>
+        </Address>
+        <SSOAccountID>1001324218</SSOAccountID>
+        <ContractDetail>
+          <NamePrefix>*****</NamePrefix>
+          <Name>*****</Name>
+          <PhoneNumber>0-2575-3959</PhoneNumber>
+          <MobileNumber>*****</MobileNumber>
+          <FaxNumber>0-2575-3963</FaxNumber>
+          <EmailAddress>*****</EmailAddress>
+          <Other>*****</Other>
+        </ContractDetail>
+      </TraderParty>
+    </PartyInformation>
+    <EmployerInformation>
+      <EmployerID>3102000548745</EmployerID>
+      <EmployerName>นามสมควร มุ่งพิทักษ์</EmployerName>
+      <EmployerPosition>ผู้จัดการแผนกบุคคล</EmployerPosition>
+    </EmployerInformation>
+    <SubsidyInformation>
+      <SubsidyRate>05.00</SubsidyRate>
+      <SubsidyMonth>--03--</SubsidyMonth>
+      <SubsidyYear>2561</SubsidyYear>
+      <TotalWageAmount currencyID="THB">1694361.00</TotalWageAmount>
+      <TotalEmployeeSubsidyAmount currencyID="THB">82378</TotalEmployeeSubsidyAmount>
+      <TotalEmployerSubsidyAmount currencyID="THB">82378</TotalEmployerSubsidyAmount>
+      <TotalSubsidyAmount currencyID="THB">164756</TotalSubsidyAmount>
+      <TotalEmployeeNumber>179</TotalEmployeeNumber>
+      <BranchInformation>
+        <BranchItem>
+          <ItemNumber>1</ItemNumber>
+          <SSOBranchCode>000000</SSOBranchCode>
+          <TotalBranchWageAmount currencyID="THB">      1694361.00</TotalBranchWageAmount>
+          <TotalBranchEmployeeSubsidyAmount currencyID="THB">   82378</TotalBranchEmployeeSubsidyAmount>
+          <TotalBranchEmployerSubsidyAmount currencyID="THB">   82378</TotalBranchEmployerSubsidyAmount>
+          <TotalBranchSubsidyAmount currencyID="THB">  164756</TotalBranchSubsidyAmount>
+          <TotalBranchEmployeeNumber>     179</TotalBranchEmployeeNumber>
+          <ItemInformation>
+            <SubsidyItem>
+              <ItemNumber>1</ItemNumber>
+              <EmployeeInformation>
+                <EmployeeID>1100200362621</EmployeeID>
+                <EmployeeTitle>นาย</EmployeeTitle>
+                <EmployeeName>อัครพล</EmployeeName>
+                <EmployeeLastName>ทั่งจันทร์แดง</EmployeeLastName>
+              </EmployeeInformation>
+              <WageAmount currencyID="THB">9000.00</WageAmount>
+              <SubsidyAmount currencyID="THB">450</SubsidyAmount>
+              <LastEntry>N</LastEntry>
+            </SubsidyItem>
+            <SubsidyItem>
+              <ItemNumber>2</ItemNumber>
+              <EmployeeInformation>
+                <EmployeeID>1100500199491</EmployeeID>
+                <EmployeeTitle>นาย</EmployeeTitle>
+                <EmployeeName>เอกชัย</EmployeeName>
+                <EmployeeLastName>สุขแสง</EmployeeLastName>
+              </EmployeeInformation>
+              <WageAmount currencyID="THB">9000.00</WageAmount>
+              <SubsidyAmount currencyID="THB">450</SubsidyAmount>
+              <LastEntry>N</LastEntry>
+            </SubsidyItem>
+          </ItemInformation>
+        </BranchItem>
+      </BranchInformation>
+    </SubsidyInformation>
+    <PaymentInformation>
+      <BankCode>011</BankCode>
+      <BankBranchCode>000029</BankBranchCode>
+      <AccountNumber>0291052967</AccountNumber>
+      <PaymentAmount currencyID="THB">164756</PaymentAmount>
+    </PaymentInformation>
+  </DocumentDetail>
+</SSOMessageSubsidy>
